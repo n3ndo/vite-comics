@@ -6,8 +6,12 @@ export default {
 <template lang="">
     <main>
         <div class="top-main">
-            <div class="container">
-                <h2>--> Content goes here <--</h2>
+            <div class="jumbotron">
+                <div class="container">
+                    <h2>current series</h2>
+                </div>
+            </div>
+            <div class="films">
             </div>
         </div>
         <div class="bottom-main">
@@ -24,34 +28,54 @@ export default {
     </main>
 </template>
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+
 main {
     background-color: #000;
+    .jumbotron{
+        background-image: url('../img/jumbotron.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 300px;
+        position: relative;
+
+        h2{
+            position: absolute;
+            top: 90%;
+            background-color: $primary-color;
+            padding: 15px 5px;
+            text-transform: uppercase;
+            font-size: 17px;
+        }
+    }
 
     h2 {
         color: #fff;
         padding: 40px 0px;
     }
 
-    .bottom-main{
-        background-color: rgba(2,130,249,255);
+    .bottom-main {
+        background-color: $primary-color;
         padding: 30px 0px;
+
         ul {
             list-style-type: none;
             display: flex;
             justify-content: space-around;
             align-items: center;
-    
+
             li {
                 display: flex;
                 align-items: center;
                 padding: 0px 10px;
-                
-                a{
+
+                a {
                     color: #fff;
                     padding: 0px 10px;
                     text-transform: uppercase;
                     font-size: 12px;
                 }
+
                 img {
                     width: 50px;
                 }
